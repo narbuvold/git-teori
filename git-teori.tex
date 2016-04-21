@@ -1,4 +1,5 @@
 \documentclass[a4paper,12pt]{article}
+\usepackage{listings}
 \usepackage[utf8]{inputenc}
 \usepackage[swedish]{babel}
 \usepackage{graphicx}
@@ -34,7 +35,7 @@ Dessutom innehåller en commit namnet på sin förälder, det vill säga den com
 
 \section{Branch}
 
-En branch är kort och gott ett mänskligt läsbart namn på en commit.
+En branch är kort och gott en mänskligt läsbar namnlapp satt på en commit.
 I mer detalj kan man beskriva det som ett objekt som pekar på en commit och som kan flyttas längs historiken.
 För att hålla koll på vilken branch som beskriver repots nuvarande utseende finns en specialbranch som heter HEAD och som endast kan peka på en annan branch.
 Står du i branchen master (HEAD pekar alltså på master) och gör en commit så kommer master att peka ut den nya committen istället.
@@ -78,4 +79,14 @@ Sedan kommer eventuella branchhuvuden att flyttas till D.
 p
 Detta innebär att alla commits från C till A kommer ``glömmas bort''. 
 Det är därför viktigt att samtliga användare använder commiten D och inte arbetar vidare från committen A.
+
+\section{Användbara inställningar}
+
+\begin{lstlisting}
+  git config --global user.name "John Doe"
+  git config --global user.email johndoe@example.com
+  git config --global core.editor emacs
+  git config push.default simple
+  git config --global alias.g 'log --oneline --graph --decorate'
+\end{lstlisting}
 \end{document}
